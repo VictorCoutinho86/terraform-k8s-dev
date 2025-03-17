@@ -55,5 +55,5 @@ resource "helm_release" "argocd" {
     value = bcrypt(var.argo_password)
   }
 
-  depends_on = [helm_release.ingress_nginx]
+  depends_on = [helm_release.external-dns]
 }
