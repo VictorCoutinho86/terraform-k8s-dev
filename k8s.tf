@@ -14,5 +14,20 @@ resource "kind_cluster" "local_cluster" {
         container_path = "/mnt/data"
       }
     }
+    node {
+      role = "worker"
+      extra_mounts {
+        host_path      = pathexpand("${path.cwd}/data/")
+        container_path = "/mnt/data"
+      }
+    }
+
+    node {
+      role = "worker"
+      extra_mounts {
+        host_path      = pathexpand("${path.cwd}/data/")
+        container_path = "/mnt/data"
+      }
+    }
   }
 }
